@@ -11,7 +11,6 @@ export class ApiGatewayService implements OnModuleInit {
       this.messagingService.subscribeToResponseOf('auth.health');
       this.messagingService.subscribeToResponseOf('task-manager.health');
       this.messagingService.subscribeToResponseOf('workspace.health');
-      await this.messagingService.connect();
    }
 
    getHello(): string {

@@ -8,6 +8,5 @@ export class AuthService {
    async onModuleInit() {
       this.messagingService.subscribeToResponseOf('auth.register');
       this.messagingService.subscribeToResponseOf('auth.login');
-      await this.messagingService.connect();
    }
 }
