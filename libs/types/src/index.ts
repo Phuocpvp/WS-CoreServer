@@ -27,6 +27,7 @@ export * from './dtos/project/query-project.dto';
 
 export * from './dtos/widget/widget.dto';
 export * from './dtos/task/task.dto';
+export * from './dtos/task-attachment/task-attachment.dto';
 
 export * from './dtos/note/note.dto';
 

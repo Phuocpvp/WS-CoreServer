@@ -9,6 +9,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { TeamModule } from './team/team.module';
 import { ProjectModule } from './project/project.module';
 import { TaskModule } from './task/task.module';
+import { TaskAttachmentModule } from './task-attachment/task-attachment.module';
 
 @Module({
    imports: [
@@ -40,6 +41,7 @@ import { TaskModule } from './task/task.module';
       TeamModule,
       ProjectModule,
       TaskModule,
+      TaskAttachmentModule,
    ],
    controllers: [TaskManagerServiceController],
    providers: [TaskManagerServiceService],
