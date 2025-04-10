@@ -12,6 +12,7 @@ import { TeamModule } from './team/team.module';
 import { WorkspaceModule } from './workspace/workspace.module';
 import { WidgetModule } from './widget/widget.module';
 import { NoteModule } from './note/note.module';
+import { ProjectModule } from './project/project.module';
 
 @Module({
    imports: [
@@ -41,6 +42,7 @@ import { NoteModule } from './note/note.module';
       WorkspaceModule,
       WidgetModule,
       NoteModule,
+      ProjectModule,
    ],
    controllers: [ApiGatewayController],
    providers: [ApiGatewayService],

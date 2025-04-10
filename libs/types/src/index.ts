@@ -21,6 +21,10 @@ export * from './dtos/workspace/update-workspace.dto';
 export * from './dtos/workspace/query-workspace.dto';
 export * from './dtos/workspace/workspace-access.dto';
 
+export * from './dtos/project/create-project.dto';
+export * from './dtos/project/update-project.dto';
+export * from './dtos/project/query-project.dto';
+
 export * from './dtos/widget/widget.dto';
 
 export * from './dtos/note/note.dto';
