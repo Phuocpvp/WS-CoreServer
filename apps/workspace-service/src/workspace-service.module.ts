@@ -7,6 +7,7 @@ import { ClientsModule } from '@nestjs/microservices';
 import { getKafkaConfig } from '@app/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { WorkspaceModule } from './workspace/workspace.module';
+import { WidgetModule } from './widget/widget.module';
 
 @Module({
    imports: [
@@ -36,6 +37,7 @@ import { WorkspaceModule } from './workspace/workspace.module';
          },
       ]),
       WorkspaceModule,
+      WidgetModule,
    ],
    controllers: [WorkspaceServiceController],
    providers: [WorkspaceServiceService],

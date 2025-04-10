@@ -21,6 +21,8 @@ export * from './dtos/workspace/update-workspace.dto';
 export * from './dtos/workspace/query-workspace.dto';
 export * from './dtos/workspace/workspace-access.dto';
 
+export * from './dtos/widget/widget.dto';
+
 // Exporting all Enums
 export * from './enums/pricing/duration.enum';
 export * from './enums/team/role-team.enum';
