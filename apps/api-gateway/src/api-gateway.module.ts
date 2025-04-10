@@ -11,6 +11,7 @@ import { PricingModule } from './pricing/pricing.module';
 import { TeamModule } from './team/team.module';
 import { WorkspaceModule } from './workspace/workspace.module';
 import { WidgetModule } from './widget/widget.module';
+import { NoteModule } from './note/note.module';
 
 @Module({
    imports: [
@@ -39,6 +40,7 @@ import { WidgetModule } from './widget/widget.module';
       TeamModule,
       WorkspaceModule,
       WidgetModule,
+      NoteModule,
    ],
    controllers: [ApiGatewayController],
    providers: [ApiGatewayService],

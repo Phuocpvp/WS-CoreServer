@@ -23,10 +23,13 @@ export * from './dtos/workspace/workspace-access.dto';
 
 export * from './dtos/widget/widget.dto';
 
+export * from './dtos/note/note.dto';
+
 // Exporting all Enums
 export * from './enums/pricing/duration.enum';
 export * from './enums/team/role-team.enum';
 export * from './enums/workspace/workspace-permission.enum';
+export * from './enums/file-type.enum';
 
 // Exporting all Interfaces
 export * from './interfaces/api-response.interface';
