@@ -6,7 +6,14 @@ import { RpcException } from '@nestjs/microservices';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
-import { LoginDTO, LoginResponseDTO, RegisterDTO } from '@app/types';
+import {
+   APIResponse,
+   LoginDTO,
+   LoginResponseDTO,
+   RefreshAccessTokenDTO,
+   RegisterDTO,
+} from '@app/types';
+import { access } from 'fs';
 
 @Injectable()
 export class AuthService {
@@ -82,7 +89,9 @@ export class AuthService {
       };
       return this.jwtservice.sign(payload, {
          secret: this.configService.get<string>('auth.refreshTokenSecret'),
-         expiresIn: this.configService.get<string>('auth.refreshTokenExpiresIn'),
+         expiresIn: this.configService.get<string>(
+            'auth.refreshTokenExpiresIn',
+         ),
       });
    }
 
@@ -104,5 +113,32 @@ export class AuthService {
          message: 'Invalid credentials please try again',
          statusCode: HttpStatus.BAD_REQUEST,
       });
+   }
+
+   async RefreshAccessToken(
+      refreshaccesstokenDTO: RefreshAccessTokenDTO,
+   ): Promise<APIResponse<any>> {
+      try {
+         const user = await this.userModel
+            .findById(refreshaccesstokenDTO.IDUser)
+            .exec();
+         if (!user) {
+            throw new RpcException(
+               `User with ID ${refreshaccesstokenDTO.IDUser} not found`,
+            );
+         }
+         return {
+            message: 'User registered successfully',
+            data: {
+               access_token: this.GenerateAccessToken(user),
+            },
+         };
+      } catch (error) {
+         throw new RpcException({
+            message: 'Invalid token',
+            statusCode: HttpStatus.BAD_REQUEST,
+            error: error,
+         });
+      }
    }
 }

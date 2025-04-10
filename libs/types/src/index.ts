@@ -30,6 +30,7 @@ export * from './dtos/task/task.dto';
 export * from './dtos/task-attachment/task-attachment.dto';
 
 export * from './dtos/note/note.dto';
+export * from './dtos/auth/refresh-access.dto';
 
 // Exporting all Enums
 export * from './enums/pricing/duration.enum';
