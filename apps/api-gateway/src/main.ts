@@ -10,7 +10,7 @@ async function bootstrap() {
    const configService = APP.get(ConfigService);
    const PORT = configService.get<number>('app.port') || 3000;
    const HOST = configService.get<string>('app.host');
-   const clientCORS = configService.get<string>('app.host');
+   const clientCORS = configService.get<string>('app.clientCors') || 'http://localhost:4321';
    const kafkaConfig = getKafkaConfig('api-gateway-consumer');
 
    APP.connectMicroservice(kafkaConfig);
