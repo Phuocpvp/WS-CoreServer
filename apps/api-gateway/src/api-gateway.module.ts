@@ -14,6 +14,7 @@ import { WidgetModule } from './widget/widget.module';
 import { NoteModule } from './note/note.module';
 import { ProjectModule } from './project/project.module';
 import { TaskModule } from './task/task.module';
+import { TaskAttachmentModule } from './task-attachment/task-attachment.module';
 
 @Module({
    imports: [
@@ -45,6 +46,7 @@ import { TaskModule } from './task/task.module';
       NoteModule,
       ProjectModule,
       TaskModule,
+      TaskAttachmentModule,
    ],
    controllers: [ApiGatewayController],
    providers: [ApiGatewayService],
