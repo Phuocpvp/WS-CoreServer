@@ -7,6 +7,8 @@ import { validationSchema } from './config/validation.schema';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MessagingModule } from '@app/common';
 import { AuthModule } from './auth/auth.module';
+import { PricingModule } from './pricing/pricing.module';
+import { TeamModule } from './team/team.module';
 
 @Module({
    imports: [
@@ -31,6 +33,8 @@ import { AuthModule } from './auth/auth.module';
       }),
       MessagingModule,
       AuthModule,
+      PricingModule,
+      TeamModule,
    ],
    controllers: [ApiGatewayController],
    providers: [ApiGatewayService],

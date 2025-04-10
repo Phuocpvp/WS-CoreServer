@@ -1,12 +1,12 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { User, UserDocument } from '../user/user.schema';
+import { User, UserDocument } from '../user/schemas/user.schema';
 import { Model } from 'mongoose';
 import { RpcException } from '@nestjs/microservices';
 import * as bcrypt from 'bcrypt';
-import { LoginDTO, LoginResponseDTO, registerDTO } from '@app/dto';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
+import { LoginDTO, LoginResponseDTO, RegisterDTO } from '@app/types';
 
 @Injectable()
 export class AuthService {
@@ -16,7 +16,7 @@ export class AuthService {
       private readonly configService: ConfigService,
    ) {}
 
-   async Register(registerDTO: registerDTO): Promise<any> {
+   async Register(registerDTO: RegisterDTO): Promise<any> {
       const user = await this.userModel.findOne({
          $or: [
             { username: registerDTO.username },

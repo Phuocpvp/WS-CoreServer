@@ -9,6 +9,7 @@ import { getKafkaConfig } from '@app/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
+import { PricingModule } from './pricing/pricing.module';
 
 @Module({
    imports: [
@@ -39,6 +40,7 @@ import { AuthModule } from './auth/auth.module';
       ]),
       UserModule,
       AuthModule,
+      PricingModule,
    ],
    controllers: [AuthServiceController],
    providers: [AuthServiceService],

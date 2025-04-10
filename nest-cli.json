@@ -37,15 +37,6 @@
         "tsConfigPath": "libs/common/tsconfig.lib.json"
       }
     },
-    "dto": {
-      "type": "library",
-      "root": "libs/dto",
-      "entryFile": "index",
-      "sourceRoot": "libs/dto/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/dto/tsconfig.lib.json"
-      }
-    },
     "task-manager-service": {
       "type": "application",
       "root": "apps/task-manager-service",
@@ -53,6 +44,15 @@
       "sourceRoot": "apps/task-manager-service/src",
       "compilerOptions": {
         "tsConfigPath": "apps/task-manager-service/tsconfig.app.json"
+      }
+    },
+    "types": {
+      "type": "library",
+      "root": "libs/types",
+      "entryFile": "index",
+      "sourceRoot": "libs/types/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/types/tsconfig.lib.json"
       }
     },
     "workspace-service": {

@@ -100,7 +100,7 @@
     ],
     "moduleNameMapper": {
       "^@app/common(|/.*)$": "<rootDir>/libs/common/src/$1",
-      "^@app/dto(|/.*)$": "<rootDir>/libs/dto/src/$1"
+      "^@app/types(|/.*)$": "<rootDir>/libs/types/src/$1"
     }
   }
 }

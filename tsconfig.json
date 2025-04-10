@@ -24,11 +24,11 @@
       "@app/common/*": [
         "libs/common/src/*"
       ],
-      "@app/dto": [
-        "libs/dto/src"
+      "@app/types": [
+        "libs/types/src"
       ],
-      "@app/dto/*": [
-        "libs/dto/src/*"
+      "@app/types/*": [
+        "libs/types/src/*"
       ]
     }
   }

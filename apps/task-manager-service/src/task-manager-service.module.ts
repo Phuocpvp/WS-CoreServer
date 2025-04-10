@@ -6,6 +6,7 @@ import { configuration, validationSchema } from '@app/common';
 import { ClientsModule } from '@nestjs/microservices';
 import { getKafkaConfig } from '@app/common';
 import { MongooseModule } from '@nestjs/mongoose';
+import { TeamModule } from './team/team.module';
 
 @Module({
    imports: [
@@ -34,6 +35,7 @@ import { MongooseModule } from '@nestjs/mongoose';
             useFactory: () => getKafkaConfig('task-manager-service-server'),
          },
       ]),
+      TeamModule,
    ],
    controllers: [TaskManagerServiceController],
    providers: [TaskManagerServiceService],

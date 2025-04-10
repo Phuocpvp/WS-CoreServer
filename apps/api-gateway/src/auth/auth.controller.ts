@@ -1,13 +1,13 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
 import { MessagingService } from '@app/common';
-import { LoginDTO, registerDTO } from '@app/dto';
+import { LoginDTO, RegisterDTO } from '@app/types';
 
 @Controller('auth')
 export class AuthController {
    constructor(private readonly messagingService: MessagingService) {}
 
    @Post('register')
-   Register(@Body() registerDTO: registerDTO) {
+   Register(@Body() registerDTO: RegisterDTO) {
       return this.messagingService.send('auth.register', registerDTO);
    }
 

@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AuthServiceModule } from './auth-service.module';
-import { Logger, ValidationPipe } from '@nestjs/common';
+import { Logger } from '@nestjs/common';
 import { getKafkaConfig } from '@app/common';
 declare const module: any;
 
