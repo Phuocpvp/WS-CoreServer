@@ -9,6 +9,7 @@ import { MessagingModule } from '@app/common';
 import { AuthModule } from './auth/auth.module';
 import { PricingModule } from './pricing/pricing.module';
 import { TeamModule } from './team/team.module';
+import { WorkspaceModule } from './workspace/workspace.module';
 
 @Module({
    imports: [
@@ -35,6 +36,7 @@ import { TeamModule } from './team/team.module';
       AuthModule,
       PricingModule,
       TeamModule,
+      WorkspaceModule,
    ],
    controllers: [ApiGatewayController],
    providers: [ApiGatewayService],

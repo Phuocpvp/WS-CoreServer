@@ -6,6 +6,7 @@ import { configuration, validationSchema } from '@app/common';
 import { ClientsModule } from '@nestjs/microservices';
 import { getKafkaConfig } from '@app/common';
 import { MongooseModule } from '@nestjs/mongoose';
+import { WorkspaceModule } from './workspace/workspace.module';
 
 @Module({
    imports: [
@@ -34,6 +35,7 @@ import { MongooseModule } from '@nestjs/mongoose';
             useFactory: () => getKafkaConfig('workspace-service-server'),
          },
       ]),
+      WorkspaceModule,
    ],
    controllers: [WorkspaceServiceController],
    providers: [WorkspaceServiceService],
