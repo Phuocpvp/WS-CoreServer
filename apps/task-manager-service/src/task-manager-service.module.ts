@@ -7,6 +7,7 @@ import { ClientsModule } from '@nestjs/microservices';
 import { getKafkaConfig } from '@app/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { TeamModule } from './team/team.module';
+import { ProjectModule } from './project/project.module';
 
 @Module({
    imports: [
@@ -36,6 +37,7 @@ import { TeamModule } from './team/team.module';
          },
       ]),
       TeamModule,
+      ProjectModule,
    ],
    controllers: [TaskManagerServiceController],
    providers: [TaskManagerServiceService],
