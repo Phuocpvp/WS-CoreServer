@@ -8,5 +8,6 @@ export class AuthService {
    async onModuleInit() {
       this.messagingService.subscribeToResponseOf('auth.register');
       this.messagingService.subscribeToResponseOf('auth.login');
+      this.messagingService.subscribeToResponseOf('auth.refresh-token');
    }
 }

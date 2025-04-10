@@ -1,7 +1,7 @@
 import { Controller } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { MessagePattern, Payload } from '@nestjs/microservices';
-import { LoginDTO, RegisterDTO } from '@app/types';
+import { LoginDTO, RefreshAccessTokenDTO, RegisterDTO } from '@app/types';
 
 @Controller('auth')
 export class AuthController {
@@ -15,5 +15,10 @@ export class AuthController {
    @MessagePattern('auth.login')
    async LoginAccount(@Payload() loginDTO: LoginDTO) {
       return await this.authService.Login(loginDTO);
+   }
+
+   @MessagePattern('auth.refresh-token')
+   async RefreshToken(@Payload() refreshaccesstokenDTO: RefreshAccessTokenDTO) {
+      return await this.authService.RefreshAccessToken(refreshaccesstokenDTO);
    }
 }
