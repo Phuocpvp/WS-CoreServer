@@ -7,7 +7,7 @@ export class NoteService implements OnModuleInit {
 
    async onModuleInit() {
       this.messagingService.subscribeToResponseOf('note.create.note');
-      this.messagingService.subscribeToResponseOf('note.findAll.note');
+      this.messagingService.subscribeToResponseOf('note.findAll.notes');
       this.messagingService.subscribeToResponseOf('note.findOne.note');
       this.messagingService.subscribeToResponseOf('note.update.note');
       this.messagingService.subscribeToResponseOf('note.remove.note');

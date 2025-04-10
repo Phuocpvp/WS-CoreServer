@@ -58,7 +58,7 @@ export class NoteService {
    }
 
    async findAll(query: QueryNoteDTO): Promise<APIResponse<NoteDocument[]>> {
-      const filter: any = { isDeleted: false };
+      const filter: any = { isDeleted: { $ne: true } };
 
       if (query.IDWidget) {
          filter.IDWidget = new Types.ObjectId(query.IDWidget);
@@ -93,10 +93,10 @@ export class NoteService {
          });
       }
 
-      const note = await this.noteModel
-         .findById(id)
-         .where({ isDeleted: false })
-         .exec();
+      const note = await this.noteModel.findOne({
+         _id: new Types.ObjectId(id),
+         isDeleted: { $ne: true }
+      }).exec();
 
       if (!note) {
          throw new RpcException({
@@ -123,12 +123,14 @@ export class NoteService {
       }
 
       const updatedNote = await this.noteModel
-         .findByIdAndUpdate(
-            id,
+         .findOneAndUpdate(
+            {
+               _id: new Types.ObjectId(id),
+               isDeleted: { $ne: true }
+            },
             { ...updateNoteDTO, $inc: { __v: 1 } },
-            { new: true },
+            { new: true }
          )
-         .where({ isDeleted: false })
          .exec();
 
       if (!updatedNote) {
@@ -154,9 +156,12 @@ export class NoteService {
 
       const result = await this.noteModel
          .findOneAndUpdate(
-            { _id: id, isDeleted: false },
+            {
+               _id: new Types.ObjectId(id),
+               isDeleted: { $ne: true }
+            },
             { isDeleted: true },
-            { new: true },
+            { new: true }
          )
          .exec();
 
