@@ -8,6 +8,7 @@ import {
    Put,
    Query,
    Request,
+   UseGuards,
 } from '@nestjs/common';
 import { MessagingService } from '@app/common';
 import {
@@ -15,8 +16,10 @@ import {
    QueryTaskAttachmentDTO,
    UpdateTaskAttachmentDTO,
 } from '@app/types';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('task-attachment')
+@UseGuards(AuthGuard('jwt'))
 export class TaskAttachmentController {
    constructor(private readonly messagingService: MessagingService) {}
 
