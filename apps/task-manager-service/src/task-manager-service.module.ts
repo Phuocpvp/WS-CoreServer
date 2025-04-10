@@ -8,6 +8,7 @@ import { getKafkaConfig } from '@app/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { TeamModule } from './team/team.module';
 import { ProjectModule } from './project/project.module';
+import { TaskModule } from './task/task.module';
 
 @Module({
    imports: [
@@ -38,6 +39,7 @@ import { ProjectModule } from './project/project.module';
       ]),
       TeamModule,
       ProjectModule,
+      TaskModule,
    ],
    controllers: [TaskManagerServiceController],
    providers: [TaskManagerServiceService],
