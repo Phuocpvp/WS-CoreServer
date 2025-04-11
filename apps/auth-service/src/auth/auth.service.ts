@@ -13,7 +13,6 @@ import {
    RefreshAccessTokenDTO,
    RegisterDTO,
 } from '@app/types';
-import { access } from 'fs';
 
 @Injectable()
 export class AuthService {
